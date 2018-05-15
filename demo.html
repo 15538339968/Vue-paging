@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue 实现简单分页</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="js/vue.paging.js"></script>
+  <script src="css/vue.paging.css"></script>
+</head>
+<body>
+
+
+<div class="paging mt50">
+  <test-paging v-bind:paging="paging" @pagechange="pagechange"></test-paging>
+</div>
+
+<script>
+ $(document).ready(function(){
+
+   //获取地址栏中的分页参数
+   let page = GetParameterString('page');
+
+   // 页面第一次加载 异步获取数据
+   httpdList(page);
+
+
+   // 填充 列表 数据
+   var vm = new Vue({
+     el:'#list',
+     data:{
+       lists:'',
+       paging:''
+     },
+     methods:{
+       pagechange:function(currentPage){
+         // 获取写的列表数据
+         httpdList(currentPage);
+         // 更新浏览器地址
+         SetAddress(currentPage);
+       }
+     }
+   });
+
+
+  function httpdList(info){
+    let page = info || 1;
+    $.post(
+      "url",
+      { 'pagesize': pagesize,
+        'page' :  page
+      },
+      function(result){
+        if(result.status){
+          alert(result.msg);
+          return;
+        }
+        var data = result.result;
+        vm.lists = data.list; // 列表数据填充
+        vm.paging = data.page; // 分页数据数据填充
+      });
+  }
+ });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+/*
+  分页组件样式
+  样式是半透明的，需要设置背景看的清哟。
+*/
+
+.paging{
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  text-align: center;
+  border-radius: 0;
+}
+
+.paging .pagination {
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.paging .pagination {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-box-shadow: outset 2px 5px 10px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: outset 2px 5px 10px rgba(0, 0, 0, 0.35);
+  box-shadow: outset 2px 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+
+.pagination > li > a,
+.pagination > .disabled > a,
+.pagination > .disabled > a:focus,
+.pagination > .disabled > a:hover,
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  padding: 10px;
+  color: #fff;
+  border: none;
+  background: none;
+  font-weight: 500;
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  font-weight: 600;
+}
+
+.pagination>.active>a {
+  color: #5ac8fa !important;
+  font-weight:600;
+  background-color: initial !important;
+  border-color: initial !important;
+}
