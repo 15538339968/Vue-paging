@@ -9,7 +9,8 @@
 >  * 3 点完分页后刷新页面，要保持在当前页啦
 
 ### 效果图
- ![分页效果图]（http://wx1.sinaimg.cn/mw690/0060lm7Tly1frbvgxsging30bp01rgn3.gif）
+
+ ![Aaron Swartz](http://wx1.sinaimg.cn/mw690/0060lm7Tly1frbvgxsging30bp01rgn3.gif)
  
 ### 直接上代码了
 
